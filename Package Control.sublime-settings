@@ -1,0 +1,11 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"Dotfiles Syntax Highlighting",
+		"fish-shell",
+		"Package Control",
+		"Solarized Color Scheme",
+		"Theme - Soda"
+	]
+}
