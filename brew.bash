@@ -7,7 +7,7 @@ brew update
 brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated)
-# brew install coreutils
+brew install coreutils
 # echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 
 # Install more recent versions of some OS X tools
@@ -17,16 +17,30 @@ brew upgrade
 # brew install php54
 # brew install ruby
 
+# Brew cask to install GUI applications.
+brew install caskroom/cask/brew-cask
+brew tap caskroom/versions
+
+brew cask install java
+
 # Install everything else
 brew install ag
 brew install git
 brew install git-extras
 brew install httpie
-brew install ffmpeg
-brew install graphicsmagick
+brew install curl
+brew install wget
 brew install htop
-brew install mobile-shell
-# brew install mysql
+brew install groovy
+brew install maven
+brew install gradle
+brew install leiningen
+brew install liblinear
+brew install mongodb
+brew install readline
+brew install s3cmd
+brew install ssh-copy-id
 
 # Remove outdated versions from the cellar
-brew cleanup
+# brew cleanup
+brew linkapps

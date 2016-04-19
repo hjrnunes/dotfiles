@@ -21,19 +21,21 @@ fi
 
 printf "# Syncing to home folder...\n"
 function doSync() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "init" --exclude "*.bash" --exclude "apply-settings.fish" --exclude "*.md" --exclude "*.txt" -av . ~
+    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "init" --exclude "*.bash" --exclude "apply-settings.fish" --exclude "*.md" --exclude "*.txt" -av . ~
+    ln -s ./.config ~/.config
+    ln -s ./.gitconfig ~/.gitconfig
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	doSync
+    doSync
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
-	echo
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doSync
+    read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        doSync
   else
     printf "Aborted.\n\n"
     exit 0
-	fi
+    fi
 fi
 unset doSync
 
@@ -56,10 +58,19 @@ else
   printf "ok.\n\n"
 fi
 
-printf "# Setting up/refreshing fish settings (i.e. universal variables)... "
-fish apply-settings.fish
+#printf "# Installing Oh My Fish "
+#curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+#if [[ $? -ne 0 ]]; then
+#  printf "\nError: applying fish settings failed.\n\n"
+#  exit 1
+#else
+#  printf "done.\n\n"
+#fi
+
+printf "# Installing Fisherman"
+curl -sL get.fisherman.sh | fish
 if [[ $? -ne 0 ]]; then
-  printf "\nError: applying fish settings failed.\n\n"
+  printf "\nError: Installing fisherman failed.\n\n"
   exit 1
 else
   printf "done.\n\n"

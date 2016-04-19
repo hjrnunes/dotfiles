@@ -1,4 +1,4 @@
-# Simon’s dotfiles
+# Hjrnunes’s dotfiles
 
 OSX, Homebrew, fish, git, Slate.
 

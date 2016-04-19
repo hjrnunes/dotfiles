@@ -1,0 +1,6 @@
+package brew
+package hash
+package pbcopy
+package rbenv
+package sublime
+theme default
