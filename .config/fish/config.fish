@@ -9,30 +9,46 @@ set -g -x PATH $HOME/.local/bin $PATH
 set -g -x CLASSPATH /Users/hjrnunes
 set -g -x ARCHFLAGS "-arch x86_64"
 
-set -g -x GIT_EDITOR "subl --wait --new-window"
+set -g -x GIT_EDITOR "nano"
 set -Ux LSCOLORS Cxgxfxfxcxdxdxhbadbxbx
 
-# pyenv stuff
-status --is-interactive; and . (pyenv init -|psub)
-status --is-interactive; and . (pyenv virtualenv-init -|psub)
-set -g -x VIRTUAL_ENV_DISABLE_PROMPT 1
-
 # docker stuff
-set -g -x DOCKER_HOST tcp://192.168.99.100:2376
-set -g -x DOCKER_CERT_PATH /Users/hjrnunes/.docker/machine/machines/dev
-set -g -x DOCKER_TLS_VERIFY 1
+set -gx DOCKER_TLS_VERIFY "1";
+set -gx DOCKER_HOST "tcp://192.168.99.100:2376";
+set -gx DOCKER_CERT_PATH "/Users/hjrnunes/.docker/machine/machines/default";
+set -gx DOCKER_MACHINE_NAME "default";
 
 # iterm2 integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-# use latest Ruby + Gems
-# set -x PATH "/usr/local/Cellar/ruby/2.0.0-p0/bin" "/usr/local/opt/ruby/bin" $PATH
-
-# node (default)
-# set -x NODE_PATH "/usr/local/lib/node" "/usr/local/lib/node_modules" $NODE_PATH
-
-# node (current version, via n)
-# n 0.12.7
+# Homebrew editor
+set -gx HOMEBREW_EDITOR "subl --wait --new-window";
 
 # expose PATH to graphical apps
 launchctl setenv PATH $PATH
+set -g fisher_home ~/.local/share/fisherman
+set -g fisher_config ~/.config/fisherman
+source $fisher_home/config.fish
+
+# pyenv
+set -x PATH "/Users/hjrnunes/.pyenv/bin" $PATH
+status --is-interactive; and . (pyenv init -|psub)
+status --is-interactive; and . (pyenv virtualenv-init -|psub)
+set -g -x VIRTUAL_ENV_DISABLE_PROMPT 1
+
+# rbenv
+set -x PATH "/Users/hjrnunes/.rbenv/bin" $PATH
+status --is-interactive; and . (rbenv init -|psub)
+
+# Fish git prompt
+set __fish_git_prompt_showdirtystate 'yes'
+set __fish_git_prompt_showstashstate 'yes'
+set __fish_git_prompt_showupstream 'yes'
+set __fish_git_prompt_color_branch yellow
+
+# Status Chars
+set __fish_git_prompt_char_dirtystate '⚡'
+set __fish_git_prompt_char_stagedstate '→'
+set __fish_git_prompt_char_stashstate '↩'
+set __fish_git_prompt_char_upstream_ahead '↑'
+set __fish_git_prompt_char_upstream_behind '↓'

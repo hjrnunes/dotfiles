@@ -1,0 +1,1 @@
+/Users/hjrnunes/.config/fisherman/cache/bd/completions/bd.fish

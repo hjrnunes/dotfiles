@@ -37,15 +37,19 @@
     remotes = remote -v
     # Interactive rebase with the given number of latest commits
     reb = "!r() { git rebase -i HEAD~$1; }; r"
+    unstage = reset HEAD
+    uncommit = reset --soft HEAD^
+
 
 [apply]
     # detect whitespace errors when applying a patch
-    whitespace = fix
+    whitespace = warn
 
 [core]
-    excludesfile = ~/.gitignore
+	excludesfile = /Users/hjrnunes/.gitignore
     # treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
-    whitespace = space-before-tab,indent-with-non-tab,trailing-space
+    whitespace = space-before-tab, trailing-space
+	editor = nano
 
 [color]
     ui = auto
@@ -61,7 +65,7 @@
     plain = white dim
 [color "status"]
     added = green
-    changed = blue
+    changed = cyan
     untracked = red
 
 [merge]
@@ -96,5 +100,11 @@
 # personal details
 
 [user]
-    email = simon@attentif.ch
-    name = Simon Goumaz
+    email = hjrnunes@gmail.com
+    name = Henrique Nunes
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
