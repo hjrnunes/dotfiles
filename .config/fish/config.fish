@@ -5,6 +5,7 @@ set -x PATH ""(brew --prefix coreutils)"/libexec/gnubin" $PATH
 set -g -x PATH /usr/local/bin $PATH
 set -g -x PATH /usr/local/sbin $PATH
 set -g -x PATH $HOME/.local/bin $PATH
+set -g -x PATH /Applications/MySQLWorkbench.app/Contents/MacOS $PATH
 
 set -g -x CLASSPATH /Users/hjrnunes
 set -g -x ARCHFLAGS "-arch x86_64"
