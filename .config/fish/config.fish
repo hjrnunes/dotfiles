@@ -13,12 +13,6 @@ set -g -x ARCHFLAGS "-arch x86_64"
 set -g -x GIT_EDITOR "nano"
 set -Ux LSCOLORS Cxgxfxfxcxdxdxhbadbxbx
 
-# docker stuff
-set -gx DOCKER_TLS_VERIFY "1";
-set -gx DOCKER_HOST "tcp://192.168.99.100:2376";
-set -gx DOCKER_CERT_PATH "/Users/hjrnunes/.docker/machine/machines/default";
-set -gx DOCKER_MACHINE_NAME "default";
-
 # iterm2 integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
@@ -29,7 +23,7 @@ set -gx HOMEBREW_EDITOR "subl --wait --new-window";
 launchctl setenv PATH $PATH
 set -g fisher_home ~/.local/share/fisherman
 set -g fisher_config ~/.config/fisherman
-source $fisher_home/config.fish
+# source $fisher_home/config.fish
 
 # pyenv
 set -x PATH "/Users/hjrnunes/.pyenv/bin" $PATH
