@@ -34,7 +34,7 @@ function fish_right_prompt -d 'all about the right prompt'
 
   set_color $fish_color_autosuggestion[1]
 
-  __hjrnunes_cmd_duration
-  __hjrnunes_timestamp
+  #__hjrnunes_cmd_duration
+  #__hjrnunes_timestamp
   set_color normal
 end
