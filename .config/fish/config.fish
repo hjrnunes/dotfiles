@@ -19,6 +19,9 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 # Homebrew editor
 set -gx HOMEBREW_EDITOR "subl --wait --new-window";
 
+# Go
+set -x -U GOPATH $HOME/workspace/sandbox/go
+
 # expose PATH to graphical apps
 launchctl setenv PATH $PATH
 set -g fisher_home ~/.local/share/fisherman
@@ -34,6 +37,10 @@ set -g -x VIRTUAL_ENV_DISABLE_PROMPT 1
 # rbenv
 set -x PATH "/Users/hjrnunes/.rbenv/bin" $PATH
 status --is-interactive; and . (rbenv init -|psub)
+
+# jenv
+set -x PATH "/Users/hjrnunes/.jenv/bin" $PATH
+status --is-interactive; and . (jenv init -|psub)
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
