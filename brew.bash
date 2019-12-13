@@ -21,7 +21,9 @@ brew install coreutils
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
-brew cask install java
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package
+
+#brew cask install java
 
 # Install everything else
 brew install ag
@@ -31,16 +33,16 @@ brew install httpie
 brew install curl
 brew install wget
 brew install htop
-brew install groovy
 brew install maven
-brew install gradle
 brew install leiningen
-brew install liblinear
-brew install mongodb
+brew install clojure
+brew install zsh-completions
+brew install youtube-dl
 brew install readline
 brew install s3cmd
+brew install tldr
 brew install ssh-copy-id
 
 # Remove outdated versions from the cellar
-# brew cleanup
-brew linkapps
+brew cleanup
+#brew linkapps

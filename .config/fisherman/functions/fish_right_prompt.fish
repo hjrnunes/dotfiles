@@ -1,1 +1,0 @@
-/Users/hjrnunes/.config/fisherman/cache/hjrnunes/fish_right_prompt.fish

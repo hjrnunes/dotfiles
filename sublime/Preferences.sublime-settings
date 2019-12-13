@@ -1,0 +1,10 @@
+{
+	"color_scheme": "Packages/Theme - Solarized Flat/Solarized Flat Dark.tmTheme",
+	"draw_white_space": "all",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Sodarized Dark.sublime-theme"
+}

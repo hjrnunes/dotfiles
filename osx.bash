@@ -50,7 +50,7 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
 # Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+#defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -68,8 +68,8 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Disable automatic termination of inactive apps
 # defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
-# Disable the crash reporter
-defaults write com.apple.CrashReporter DialogType -string "none"
+## Disable the crash reporter
+#defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Set Help Viewer windows to non-floating mode
 defaults write com.apple.helpviewer DevMode -bool true

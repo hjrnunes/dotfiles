@@ -1,0 +1,17 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Color Scheme - Nice Blue Soda",
+		"EDN",
+		"nginx",
+		"Package Control",
+		"SSH Config",
+		"Theme - Soda SolarizedDark",
+		"Theme - Sodarized",
+		"Theme - Solarized Flat"
+	]
+}
